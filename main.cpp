@@ -4,8 +4,8 @@
 
 int main (int, char **)
 {
-  std::cout << "hello world" << version() << std::endl;
-    std::cout << "Version: " << version() << std::endl;
+  std::cout << "hello worlds" << version() << std::endl;
+    std::cout << "Version: " << version() << std::endl;    
 
     return 0;
 }
