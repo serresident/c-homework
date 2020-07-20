@@ -1,5 +1,6 @@
 language: cpp
 before_script:
+  - sudo apt-get install cmake
 - sudo apt-get install libboost-test-dev -y
 - echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" | sudo tee -a /etc/apt/sources.list
 - sudo apt-get update -qq
@@ -13,10 +14,3 @@ deploy:
   skip_cleanup: true
   script:
   - curl -T helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -ustarokurov:$BINTRAY_API_KEY "https://api.bintray.com/content/starokurov/otus-cpp/helloworld/$TRAVIS_BUILD_NUMBER/helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
-  addons:
-  apt:
-    sources:
-      - george-edison55-precise-backports
-    packages:
-      - cmake-data
-      - cmake
